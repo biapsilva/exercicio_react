@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Produtos from './containers/Produtos'
 
+import React from 'react'
 import { GlobalStyle } from './styles'
 
 export type Produto = {
@@ -39,6 +40,10 @@ function App() {
     }
   }
 
+  function dispatch(arg0: void): void {
+    throw new Error('Function not implemented.')
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -48,7 +53,7 @@ function App() {
           produtos={produtos}
           favoritos={favoritos}
           favoritar={favoritar}
-          adicionarAoCarrinho={adicionarAoCarrinho}
+          adicionarAoCarrinho={(item) => dispatch(adicionarAoCarrinho(item))}
         />
       </div>
     </>
